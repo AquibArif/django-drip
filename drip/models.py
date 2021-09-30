@@ -40,6 +40,8 @@ class Drip(models.Model):
 
     enabled = models.BooleanField(default=False)
 
+    delete_sent_after_days = models.IntegerField(help_text='Delete sent_drips after number of days.', blank=True, null=True)
+
     from_email = models.EmailField(null=True, blank=True,
         help_text='Set a custom from email.')
     from_email_name = models.CharField(max_length=150, null=True, blank=True,
